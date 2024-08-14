@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Admin\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -14,7 +16,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        $data = User::find(Auth::id());
+        return view('admin::index', ['data' => $data]);
     }
 
     /**
