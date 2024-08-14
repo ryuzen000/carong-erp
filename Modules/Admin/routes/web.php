@@ -19,5 +19,5 @@ use Modules\Admin\Http\Controllers\AdminController;
 });*/
 
 Route::get('/test', function () {
-    return "Hello, World!";
+    return view('admin::index', ['data' => '']);
 });
